@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails - Application developed for the control of equipment of the Navesa / Ciaasa Group. www.gruponavesa.com.br
 
-Things you may want to cover:
+* Ruby on Rails
 
-* Ruby version
+* CSS3
 
-* System dependencies
+* HTML5
 
-* Configuration
+* MySQL
 
-* Database creation
+* JavaScritp
 
-* Database initialization
+* Jquery
 
-* How to run the test suite
+* Bootstrap
 
-* Services (job queues, cache servers, search engines, etc.)
+# System dependencies
 
-* Deployment instructions
+* Graphviz (www.graphviz.org) - Apenas para Ambiente de Desenvolvimento, utilizando a gem rails-erd para fazer o DER do Banco.
 
-* ...
+* “sudo apt-get update “ “sudo apt-get install graphviz “

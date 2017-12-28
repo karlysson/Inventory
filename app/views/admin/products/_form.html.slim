@@ -1,0 +1,15 @@
+.col-xs-12
+  .box.box-primary
+    .box-header.with-border
+      h3.box-title Fornecedor
+      .box-body
+       = simple_form_for(@admin_product) do |f|
+        = f.error_notification
+
+        .form-inputs
+         = f.input  :name
+         br
+        .form-actions
+          = f.button :submit, :class => "btn  btn-success"
+
+  a.btn.btn-primary href="/admin/products"  Voltar

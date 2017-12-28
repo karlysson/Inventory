@@ -1,0 +1,35 @@
+.content-wrapper
+  - if notice
+    br
+    .alert.alert-success role="alert"
+      p#notice = notice
+  end
+
+  section.content-header
+    h1
+      | Visualizando Empresa
+      small
+    ol.breadcrumb
+      li
+        a href="/admin"
+          i.fa.fa-institution
+          | Home
+      li
+        a href="/admin/companies" Empresas
+
+  br
+
+  .col-xs-12
+    .box.box-primary
+      .box-body.box-profile
+        h3.box-title
+          | Empresa
+      ul.list-group.list-group-unbordered
+        li.list-group-item
+          b Nome:
+          a = " #{@admin_company.name}"
+          br
+          b Ativo:
+          a = " #{@admin_company.active}"
+    a.btn.btn-primary href="/admin/companies"
+        b Voltar

@@ -1,0 +1,88 @@
+/ h1 Listing users
+
+/ table
+/   thead
+/     tr
+      th Name
+      th Email
+      th Password
+      th Password confirmation
+/       th
+/       th
+/       th
+
+/   tbody
+/     - @users.each do |user|
+/       tr
+        td = user.name
+        td = user.email
+        td = user.password
+        td = user.password_confirmation
+/         td = link_to 'Show', [:admin, user]
+/         td = link_to 'Edit', edit_admin_user_path(user)
+/         td = link_to 'Destroy', [:admin, user], data: { confirm: 'Are you sure?' }, method: :delete
+
+/ br
+
+/ = link_to 'New User', new_admin_user_path
+
+
+
+.content-wrapper
+  section.content-header
+    h1
+      | Usuários
+      small
+    ol.breadcrumb
+      li
+        a href="/admin"
+          i.fa.fa-user-plus
+          | Home
+      li
+        a href="/admin/users"  Usuários
+
+  br
+  .col-xs-12
+    .box.box-primary.box-solid
+      .box-header.with-border
+        h3.box-title
+          | Pesquisar
+        .box-tools.pull-right
+          button.btn.btn-box-tool data-widget="collapse" type="button"
+            i.fa.fa-minus
+      .box-body
+          .col-xs-12
+            form accept-charset="UTF-8" action="/admin/users" method="get"
+              input name="utf8" type="hidden" value="✓"
+              .input-group.input-group-sm
+                input#search.form-control name="search"
+                / input#search.form-control :name=>"search" :placeholder=>"Nome do Cliente, CPF, CNPJ ou Telefone"
+                span.input-group-btn
+                  input.btn.btn-primary.btn-lg name="commit" type="submit" value="Pesquisar!"
+
+  .col-xs-12
+    .box.box-primary
+      .box-header
+        h3.box-title
+          | Usuários
+      .box-body
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th id
+              th Name
+              th Email
+              th
+          tbody
+            - @users.each do |user|
+              tr
+                td = user.id
+                td = user.name
+                td = user.email
+                td
+                  a.btn.btn-default.fa.fa-search href="/admin/users/#{user.id}"
+                  a.btn.btn-default.fa.fa-edit href="/admin/users/#{user.id}/edit"
+                  a.btn.btn-default.fa.fa-times href="/admin/users/#{user.id}" data-method="DELETE" data-disabled="true" data={ confirm: " Deseja realmente excluir #{user.name} ?"}
+      = will_paginate @admin_users, renderer: BootstrapPagination::Rails
+
+    a.btn.btn-primary href="/admin/users/new"  Novo Usuário

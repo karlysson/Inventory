@@ -1,0 +1,64 @@
+aside.main-sidebar
+  /! sidebar: style can be found in sidebar.less
+  section.sidebar
+    /! Sidebar user panel
+    .user-panel
+      .pull-left.image
+        img.img-circle alt=("User Image") src="../../templates/AdminLTE/dist/img/avatar04.png" /
+      .pull-left.info
+        p = current_user.name
+        a href="#"
+          i.fa.fa-circle.text-success
+          | Online
+    /! search form
+    form.sidebar-form action="#" method="get"
+      .input-group
+        input.form-control name="q" placeholder="Search..." type="text" /
+        span.input-group-btn
+          button#search-btn.btn.btn-flat name="search" type="submit"
+            i.fa.fa-search
+    /! /.search form
+    /! sidebar menu: : style can be found in sidebar.less
+    ul.sidebar-menu
+      li.header MENU
+
+      li
+        a href="/admin"
+          i.fa.fa-dashboard
+          span Dashboard
+      li
+        a href="/admin/companies"
+          i.fa.fa-institution
+          span Empresas
+      li
+        a href="/admin/providers"
+          i.fa.fa-truck
+          span Fornecedores
+      li
+        a href="/admin/products"
+          i.fa.fa-wrench
+          span Produtos
+      li
+        a href="/admin/users"
+          i.fa.fa-user-plus
+          span Usuários
+
+      li.treeview
+        a href="#"
+          i.fa.fa-barcode
+          span Moviments
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a href="#"
+              i.fa.fa-circle-o
+              | Entrada
+          li
+            a href="#"
+              i.fa.fa-circle-o
+              | Saída
+      li
+        a href="/admin/diagrams"
+          i.fa.fa-database
+          span DER

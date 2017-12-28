@@ -1,0 +1,30 @@
+/ = simple_form_for([:admin, @user]) do |f|
+/   = f.error_notification
+
+/   .form-inputs
+    = f.input :name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+
+/   .form-actions
+/     = f.button :submit
+
+
+.col-xs-12
+  .box.box-primary
+    .box-header.with-border
+      h3.box-title Usuário
+      .box-body
+       = simple_form_for([:admin, @user]) do |f|
+        = f.error_notification
+
+        .form-inputs
+         = f.input :name
+         = f.input :email
+         = f.input :password
+         = f.input :password_confirmation
+        .form-actions
+          = f.button :submit, :class => "btn  btn-success"
+
+  a.btn.btn-primary href="/admin/users"  Voltar

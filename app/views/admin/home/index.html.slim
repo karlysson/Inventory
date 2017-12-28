@@ -1,0 +1,98 @@
+.content-wrapper
+  section.content-header
+    h1
+      | Home
+      small Dashboard
+    ol.breadcrumb
+      li
+        a href="/"
+          i.fa.fa-dashboard
+          | Home
+      li.active Dashboard
+  br
+
+  .col-xs-12
+    .row
+      .col-lg-3.col-xs-6
+        .small-box.bg-aqua
+          .inner
+            h3 = @admin_companies.size
+            p Empresa
+          .icon
+            i.fa.fa-institution
+          a.small-box-footer href="/admin/companies"
+            = t('Empresas')
+            i.fa.fa-arrow-circle-right
+
+      .col-lg-3.col-xs-6
+        .small-box.bg-green
+          .inner
+            h3 = @admin_providers.size
+            p = t('Fornecedor')
+          .icon
+            i.fa.fa-truck
+          a.small-box-footer href="/admin/providers"
+            = t('Fornecedores')
+            i.fa.fa-arrow-circle-right
+
+      .col-lg-3.col-xs-6
+        .small-box.bg-yellow
+          .inner
+            h3 = @admin_products.size
+            p = t('Produto')
+          .icon
+            i.fa.fa-wrench
+          a.small-box-footer href="/admin/products"
+            = t('Produtos')
+            i.fa.fa-arrow-circle-right
+
+      .col-lg-3.col-xs-6
+        .small-box.bg-red
+          .inner
+            h3 = @users.size
+            p = t('user')
+          .icon
+            i.fa.fa-user-plus
+          a.small-box-footer href="#"
+            | More info
+            i.fa.fa-arrow-circle-right
+
+  .col-xs-12
+    .row
+      .col-md-3.col-sm-6.col-xs-12
+        .info-box
+          span.info-box-icon.bg-aqua
+            i.fa.fa-institution
+          .info-box-content
+            span.info-box-text = t('Empresa')
+            span.info-box-number
+              = @admin_companies.size
+              small
+
+      .col-md-3.col-sm-6.col-xs-12
+        .info-box
+          span.info-box-icon.bg-green
+            i.fa.fa-truck
+          .info-box-content
+            span.info-box-text = t('Fornecedor')
+            span.info-box-number
+              = @admin_providers.size
+      .clearfix.visible-sm-block
+
+      .col-md-3.col-sm-6.col-xs-12
+        .info-box
+          span.info-box-icon.bg-yellow
+            i.fa.fa-wrench
+          .info-box-content
+            span.info-box-text = t('Produto')
+            span.info-box-number
+              = @admin_products.size
+
+      .col-md-3.col-sm-6.col-xs-12
+        .info-box
+          span.info-box-icon.bg-red
+            i.fa.fa-user-plus
+          .info-box-content
+            span.info-box-text = t('user')
+            span.info-box-number = @users.size
+

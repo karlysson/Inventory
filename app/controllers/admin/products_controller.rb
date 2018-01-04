@@ -5,9 +5,9 @@ class Admin::ProductsController < ApplicationController
   # GET /admin/products
   def index
     if
-      @admin_products = Admin::Product.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 6)
+      @admin_products = Admin::Product.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 4)
     else
-      @admin_products = Admin::Product.all.order(:id).paginate(:page => params[:page], :per_page => 6)
+      @admin_products = Admin::Product.all.order(:id).paginate(:page => params[:page], :per_page => 4)
     end
   end
 

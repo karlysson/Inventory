@@ -1,7 +1,4 @@
-
-<!DOCTYPE html>
-<html>
-<head>
+<html style="height: auto;"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>F9Soluções</title>
@@ -13,19 +10,20 @@
   <%= favicon_link_tag 'computer.ico' %>
 
 
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../templates/AdminLTE/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../templates/AdminLTE/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../templates/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../../templates/AdminLTE/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../../templates/AdminLTE/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../../templates/AdminLTE/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,51 +32,45 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-
+<body class="skin-blue sidebar-mini" style="height: auto;">
 <!-- Site wrapper -->
-<div class="wrapper">
-
-
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="/admin" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>I</b>C</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Iventory</b>Control</span>
-    </a>
-
-
+<div class="wrapper" style="height: auto;">
 
 
   <%= render 'layouts/admin/top' %>
-
-
-  </header>
-
-
 
   <%= render 'layouts/admin/sidebar' %>
 
   <%= yield %>
 
-
   <%= render 'layouts/admin/footer' %>
 
+</div>
 
+
+
+<%= javascript_include_tag 'admin/jquery-2.2.3.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'admin/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'admin/jquery.slimscroll.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'admin/fastclick.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'admin/app.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'admin/demo.js', 'data-turbolinks-track': 'reload' %>
 
 <!-- jQuery 2.2.3 -->
-<script src="../../templates/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- <script src="../../../templates/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script> -->
 <!-- Bootstrap 3.3.6 -->
-<script src="../../templates/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="../../../templates/AdminLTE/bootstrap/js/bootstrap.min.js"></script> -->
 <!-- SlimScroll -->
-<script src="../../templates/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- <script src="../../../templates/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
 <!-- FastClick -->
-<script src="../../templates/AdminLTE/plugins/fastclick/fastclick.js"></script>
+<!-- <script src="../../../templates/AdminLTE/plugins/fastclick/fastclick.js"></script> -->
 <!-- AdminLTE App -->
-<script src="../../templates/AdminLTE/dist/js/app.min.js"></script>
+<!-- <script src="../../../templates/AdminLTE/dist/js/app.min.js"></script> -->
 <!-- AdminLTE for demo purposes -->
-<script src="../../templates/AdminLTE/dist/js/demo.js"></script>
+<!-- <script src="../../../templates/AdminLTE/dist/js/demo.js"></script> -->
+
+
+
+
 </body>
 </html>

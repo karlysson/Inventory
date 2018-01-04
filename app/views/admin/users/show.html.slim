@@ -1,18 +1,34 @@
-p#notice = notice
+.content-wrapper style=("min-height: 0526px;")
+  - if notice
+    br
+    .alert.alert-success role="alert"
+      p#notice = notice
+  end
 
-p
-  strong Name:
-  = @user.name
-p
-  strong Email:
-  = @user.email
-p
-  strong Password:
-  = @user.password
-p
-  strong Password confirmation:
-  = @user.password_confirmation
+  section.content-header
+    h1
+      | Visualizando Usuário
+      small
+    ol.breadcrumb
+      li
+        a href="/admin"
+          i.fa.fa-user-plus
+          | Home
+      li
+        a href="/admin/users" Usuários
 
-=> link_to 'Edit', edit_admin_user_path(@user)
-'|
-=< link_to 'Back', admin_users_path
+  br
+
+  .col-xs-12
+    .box.box-primary
+      .box-body.box-profile
+        h3.box-title Usuário
+        .box-body
+         = simple_form_for([:admin, @user]) do |f|
+          = f.error_notification
+
+          .form-inputs
+           = f.input :name, disabled: true
+           = f.input :email, disabled: true
+
+    a.btn.btn-primary href="/admin/users"  Voltar

@@ -7,9 +7,9 @@ class Admin::UsersController < ApplicationController
   # GET /users
   def index
     if params[:search]
-      @users = User.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 6)
+      @users = User.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 4)
     else
-      @users = User.all.order(:id).paginate(:page => params[:page], :per_page => 6)
+      @users = User.all.order(:id).paginate(:page => params[:page], :per_page => 4)
     end
     # @users = User.all
   end

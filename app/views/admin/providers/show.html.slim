@@ -1,4 +1,4 @@
-.content-wrapper
+.content-wrapper style=("min-height: 0526px;")
   - if notice
     br
     .alert.alert-success role="alert"
@@ -22,11 +22,12 @@
   .col-xs-12
     .box.box-primary
       .box-body.box-profile
-        h3.box-title
-          | Fornecedor
-      ul.list-group.list-group-unbordered
-        li.list-group-item
-          b Nome:
-          a = " #{@admin_provider.name}"
-    a.btn.btn-primary href="/admin/providers"
-        b Voltar
+        h3.box-title Fornecedor
+        .box-body
+           = simple_form_for(@admin_provider) do |f|
+            = f.error_notification
+
+            .form-inputs
+             = f.input  :name, disabled: true
+
+      a.btn.btn-primary href="/admin/providers"  Voltar

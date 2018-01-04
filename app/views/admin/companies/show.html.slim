@@ -1,4 +1,4 @@
-.content-wrapper
+.content-wrapper style=("min-height: 0526px;")
   - if notice
     br
     .alert.alert-success role="alert"
@@ -19,17 +19,16 @@
 
   br
 
+
   .col-xs-12
     .box.box-primary
       .box-body.box-profile
-        h3.box-title
-          | Empresa
-      ul.list-group.list-group-unbordered
-        li.list-group-item
-          b Nome:
-          a = " #{@admin_company.name}"
-          br
-          b Ativo:
-          a = " #{@admin_company.active}"
-    a.btn.btn-primary href="/admin/companies"
-        b Voltar
+        h3.box-title Empresa
+        .box-body
+           = simple_form_for(@admin_company) do |f|
+            = f.error_notification
+
+            .form-inputs
+             = f.input  :name, disabled: true
+             = f.input  :active, disabled: true
+    a.btn.btn-primary href="/admin/companies"  Voltar

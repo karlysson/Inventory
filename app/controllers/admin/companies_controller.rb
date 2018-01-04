@@ -6,9 +6,9 @@ class Admin::CompaniesController < ApplicationController
   # GET /admin/companies
   def index
     if params[:search]
-      @admin_companies = Admin::Company.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 6)
+      @admin_companies = Admin::Company.search(params[:search]).order(:id).paginate(:page => params[:page], :per_page => 4)
     else
-      @admin_companies = Admin::Company.all.order(:id).paginate(:page => params[:page], :per_page => 6)
+      @admin_companies = Admin::Company.all.order(:id).paginate(:page => params[:page], :per_page => 4)
     end
   end
 
